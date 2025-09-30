@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables Galore!</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        .blue{
+            color: dodgerblue;
+            text-decoration: underline;
+            text-decoration-style: wavy;
+        }
+        .green{
+            width: 50%; 
+            margin: 0 auto;
+            color: lime;
+            border: 10px solid forestgreen;
+            width: fit-content;
+            height: fit-content;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .purple {
+            color: darkorchid;
+            size: 20px;
+            direction: rtl;
+            unicode-bidi: bidi-override;
+
+        }
+        .yellow {
+            color: goldenrod;
+            border: 15px solid gold;
+            width: fit-content;
+            height: fit-content;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="blue" id="string1"></h1>
+    <div class="green" >
+        <h5 id="boolean1"></h5>
+    </div>
+    <p class="purple" id="number1"></p>
+    <div class="yellow" >
+        <h4 id="string2"></h4>
+    </div>
+    <h3 class="purple" id="boolean2"></h3>
+    <p class="blue" id="number2"></p>
+    <div class="green" >
+        <h1 id="string3"></h1>
+    </div>
+    <h2 class="blue" id="number3"></h2>
+
+
+
+    <script>
+        let a="PandaPandaPanda"
+        let b=45
+        let c=true
+        let d="HippohippoHippo"
+        let e=false
+        let f=64
+        let g="giraffeGiraffegiraffe"
+        let h=12
+
+        console.log(typeof a)
+        console.log(typeof b)
+        console.log(typeof c)
+        console.log(typeof d)
+        console.log(typeof e)
+        console.log(typeof f)
+        console.log(typeof g)
+        console.log(typeof h)
+
+        document.getElementById("string1").innerText = a;
+        document.getElementById("string2").innerText = d;
+        document.getElementById("string3").innerText = g;
+
+        document.getElementById("number1").innerText = b;
+        document.getElementById("number2").innerText = f;
+        document.getElementById("number3").innerText = h;
+        
+        document.getElementById("boolean1").innerText = c;
+        document.getElementById("boolean2").innerText = e;
+
+    </script>
+</body>
+</html>

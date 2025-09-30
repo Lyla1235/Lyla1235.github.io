@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="1">
+    <input type="text" id="2">
+    <button onclick="multNumbers(x,y)">Multiply</button>
+    <h1 id="sum1"></h1>
+    <h1 id="sum2"></h1>
+
+
+    <script>
+     function ImStupid() {
+     let x = document.getElementById("1").value;
+     let y = document.getElementById("2").value;
+     let numX = parseFloat(x);
+     let numY = parseFloat(y);
+
+     let answer = multNumbers(numX,numY);
+    //  let answer2 = addNumber(answer);
+     document.getElementById("sum1").innerHTML=answer;
+    //  document.getElementById("sum2").innerHTML=answer;
+    
+        function multNumbers(num1,num2)
+      {
+        let z = num1 * num2;
+       
+        return z;
+      }
+     }
+
+
+
+    //   function addNumber(num3)
+    //   {
+    //     let num4 = num3 + num3;
+    //     return num4;
+    //   }
+  </script>
+</body>
+</html>
