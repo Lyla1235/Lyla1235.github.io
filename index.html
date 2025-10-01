@@ -3,27 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Assignments</title>
+    <title>Document</title>
+    <style>
+    body {
+            background-color: aliceblue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        .p1 {
+            font-size: 20px;
+            text-align: center;
+        }
+        input[type="text"],
+        .profTextBox{
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.5;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .container {
+            text-align: center;
+        }
+        .profButton {
+            display: inline-block;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            background-color: #007bff;
+            color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .profButton:Hover{
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .profButton:active{
+            background-color: #004085;
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
-    <h1>Week 3:</h1>
-    <p><a href="webAssignments/week3/15:09:25-firstJava">First JavaScript</a> Created on 15/09/25</p>
-    <p><a href="webAssignments/week3/16:09:25-JSVariable">Javascript Variables</a> Created on 16/09/25</p>
-    <p><a href="webAssignments/week3/17:09:25-JSAddition/index.html">JavaScript Variable Addition</a> Created on 17/09/25</p>
-    <p><a href="webAssignments/week3/18:09:25-JSMath/index.html">JavaScript Math</a> Created on 18/09/25</p>
-    <p><a href="webAssignments/week3/19:09:25-JSUserMath/index.html">JavaScript Math Interface </a> Created on 19/09/25</p>
+    <p>Input grade:</p>
+    <input class="profTextBox" id="Mark" ></input>
+    <br>
+    <br>
+    <div class="">
+        <button class="profButton" onclick="grade()">Mark</button>
+    </div>
+    <h4 id="output"></h4>
 
-    <h1>Week 4:</h1>
-    <p><a href="webAssignments/week4/22:09:25-JSFunctions/index.html">First Function</a> Created on 22/09/25</p>
-    <p><a href="webAssignments/week4/23:09:25-JsMoreFunctions/index.html">More Functions</a> Created on 23/09/25</p>
-    <p><a href="webAssignments/week4/24-25:09:25-QuadraticEquation/index.html">Solving Quadratic Equations</a> Created on 24/09/25</p>
-    <p>Continued Solving Quadratic Equations Created on 25/09/25</p>
+    <script>
+        function grade() {
+            // getting the grade from the text box
+            let numbGrade = parseFloat(document.getElementById("Mark").value);
+            
+            // making sure the grade is a number and not a string
+            if (isNaN(numbGrade)) {
+                document.getElementById("output").innerHTML = "Please enter a valid number. ⋆.˚✮𝕋𝕙𝕒𝕟𝕜 𝕪𝕠𝕦✮˚.⋆";
+                return;
+            }
 
- <h1>Week 5:</h1>
-    <p>GitHub Troubleshooting</p>
-    <p><a href="webAssignments/week5/30:09:25-IfElse/index.html">Javascript Variables</a> Created on 30/09/25</p>
-    <p><a href="webAssignments/week5">JavaScript Variable Addition</a> Created on 01/10/25</p>
-    <p><a href="webAssignments/week5">JavaScript Math</a> Created on 02/10/25</p>
-    <p><a href="webAssignments/week5">JavaScript Math Interface </a> Created on 03/10/25</p>
+            
+            // start of if/then statements
+            if(numbGrade==100){
+                document.getElementById("output").innerHTML = `Congratulations! A+ with a perfect score! ᕕ( ᐛ )ᕗ`;
+            } else if(numbGrade>89 && numbGrade<100){
+                document.getElementById("output").innerHTML = `Amazing work! A+! ദ്ദി(˵ •̀ ᴗ -- ˵ )`;
+            } else if(numbGrade>85) {
+                document.getElementById("output").innerHTML = `Super job! You got an A! ⸜(˃ ᵕ ˂)⸝♡`;
+            } else if(numbGrade>80) {
+                document.getElementById("output").innerHTML = `Awesome! A-! ᕙ(  •̀ ᗜ •́  )ᕗ`;
+            } else if(numbGrade>75) {
+                document.getElementById("output").innerHTML = `That's a nice B+ you got there! ⊂(•̀‿•́⊂) ᶦ'ᵐᵐᵃ ᵗᵃᵏᵉ ᵗʰᵃᵗ ᶠᵒʳ ʸᵒᵘ`;
+            } else if(numbGrade>70) {
+                document.getElementById("output").innerHTML = `Sweet! B! ₍^. .^₎⟆`;
+            } else if(numbGrade>65) {
+                document.getElementById("output").innerHTML = `Not too shabby! You got a B-! (ó ᴗ ò｡)`;
+            } else if(numbGrade>60) {
+                document.getElementById("output").innerHTML = `Well, there are worse things than a C+. ¯\_(ツ)_/¯`;
+            } else if(numbGrade>55) {
+                document.getElementById("output").innerHTML = `Try a bit harder next time! You can do better than a C! (·•᷄‎ࡇ•᷅ )`;
+            } else if(numbGrade>50) {
+                document.getElementById("output").innerHTML = `Ok, come on! keep studying! you got a D! Sending motivation! (づ ᴗ _ᴗ)づ♡ ♡ ♡ ♡ ♡`;
+            } else {
+                document.getElementById("output").innerHTML = `You failed! Better luck next time! ∘ ∘ ∘ ( °ヮ° ) ?`;
+            }
+        }
+    </script>
 </body>
 </html>
