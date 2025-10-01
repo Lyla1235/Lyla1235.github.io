@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+            background-color: aliceblue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        .p1 {
+            font-size: 20px;
+            text-align: center;
+        }
+        input[type="text"],
+        .profTextBox{
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.5;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .container {
+            text-align: center;
+        }
+        .profButton {
+            display: inline-block;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            background-color: #007bff;
+            color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .profButton:Hover{
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .profButton:active{
+            background-color: #004085;
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <p>Input grade:</p>
+    <input class="profTextBox" id="Mark" ></input>
+    <br>
+    <br>
+    <div class="">
+        <button class="profButton" onclick="grade()">Mark</button>
+    </div>
+    <h4 id="output"></h4>
+
+    <script>
+        function grade() {
+            // getting the grade from the text box
+            let numbGrade = parseFloat(document.getElementById("Mark").value);
+            
+            // making sure the grade is a number and not a string
+            if (isNaN(numbGrade)) {
+                document.getElementById("output").innerHTML = "Please enter a valid number. ⋆.˚✮𝕋𝕙𝕒𝕟𝕜 𝕪𝕠𝕦✮˚.⋆";
+                return;
+            }
+
+            
+            // start of if/then statements
+            if(numbGrade==100){
+                document.getElementById("output").innerHTML = `Congratulations! A+ with a perfect score! ᕕ( ᐛ )ᕗ`;
+            } else if(numbGrade>89 && numbGrade<100){
+                document.getElementById("output").innerHTML = `Amazing work! A+! ദ്ദി(˵ •̀ ᴗ -- ˵ )`;
+            } else if(numbGrade>85) {
+                document.getElementById("output").innerHTML = `Super job! You got an A! ⸜(˃ ᵕ ˂)⸝♡`;
+            } else if(numbGrade>80) {
+                document.getElementById("output").innerHTML = `Awesome! A-! ᕙ(  •̀ ᗜ •́  )ᕗ`;
+            } else if(numbGrade>75) {
+                document.getElementById("output").innerHTML = `That's a nice B+ you got there! ⊂(•̀‿•́⊂) ᶦ'ᵐᵐᵃ ᵗᵃᵏᵉ ᵗʰᵃᵗ ᶠᵒʳ ʸᵒᵘ`;
+            } else if(numbGrade>70) {
+                document.getElementById("output").innerHTML = `Sweet! B! ₍^. .^₎⟆`;
+            } else if(numbGrade>65) {
+                document.getElementById("output").innerHTML = `Not too shabby! You got a B-! (ó ᴗ ò｡)`;
+            } else if(numbGrade>60) {
+                document.getElementById("output").innerHTML = `Well, there are worse things than a C+. ¯\_(ツ)_/¯`;
+            } else if(numbGrade>55) {
+                document.getElementById("output").innerHTML = `Try a bit harder next time! You can do better than a C! (·•᷄‎ࡇ•᷅ )`;
+            } else if(numbGrade>50) {
+                document.getElementById("output").innerHTML = `Ok, come on! keep studying! you got a D! Sending motivation! (づ ᴗ _ᴗ)づ♡ ♡ ♡ ♡ ♡`;
+            } else {
+                document.getElementById("output").innerHTML = `You failed! Better luck next time! ∘ ∘ ∘ ( °ヮ° ) ?`;
+            }
+        }
+    </script>
+</body>
+</html>
