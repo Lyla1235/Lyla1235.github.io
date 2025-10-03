@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConcertTickets</title>
+        <style>
+        body {
+            background-color: aliceblue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .p1 {
+            font-size: 20px;
+            text-align: center;
+        }
+        input[type="text"],
+        .profTextBox{
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            line-height: 1.5;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .container {
+            text-align: center;
+        }
+        .profButton {
+            display: inline-block;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            background-color: #007bff;
+            color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .profButton:Hover{
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .profButton:active{
+            background-color: #004085;
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Buy A Concert Ticket!</h1>
+    <p>Input Age:</p>
+    <input class="profTextBox" id="age" >
+    <p>🌀 If you have a pass, type the Id number.🌀 If not, type No: </p>
+    <input class="profTextBox" id="numbId" >
+    <br>
+    <br>
+    <div class="">
+        <button class="profButton" onclick="ticket()">Buy Ticket</button>
+    </div>
+    
+    <h4 id="output"></h4>
+
+    <script>
+        function ticket() {
+        // getting age and Id #
+            let age = parseFloat(document.getElementById("age").value)
+            let firstId = document.getElementById("numbId").value.trim();
+            
+
+        // ensuring that age is a number
+            if (isNaN(age)) {
+                document.getElementById("output").innerHTML = "Please enter a valid age.";
+                return;
+            }
+        
+             let hasPass = false;
+
+        // Check if user typed "No" or provided a valid ID
+        if (firstId.toLowerCase() === "no") {
+            hasPass = false;
+        } else if (parseInt(firstId) === 112358) {
+            hasPass = true;
+        }
+
+        // price per age
+            if (age>=18) {
+                let price = 21
+            // checking their Id
+                let finalPrice = hasPass ? Math.round(price * 0.75 * 100) / 100 : price;
+
+                if (hasPass) {
+                    document.getElementById("output").innerHTML = `Pass accepted. Your ticket price is $${finalPrice}.`;
+                } else if (firstId.toLowerCase() === "no") {
+                    document.getElementById("output").innerHTML = `No pass. Your ticket price is $${finalPrice}.`;
+                } else {
+                    document.getElementById("output").innerHTML = `Invalid pass ID. Your ticket price is $${finalPrice}.`;
+                }
+            } 
+            else if (age>=12) {
+                let price = 14
+            // checking their Id
+                let finalPrice = hasPass ? Math.round(price * 0.75 * 100) / 100 : price;
+
+                if (hasPass) {
+                    document.getElementById("output").innerHTML = `Pass accepted. Your ticket price is $${finalPrice}.`;
+                } else if (firstId.toLowerCase() === "no") {
+                    document.getElementById("output").innerHTML = `No pass. Your ticket price is $${finalPrice}.`;
+                } else {
+                    document.getElementById("output").innerHTML = `Invalid pass ID. Your ticket price is $${finalPrice}.`;
+                }            
+            } 
+            else {
+                let price = 7
+            // checking their Id
+                let finalPrice = hasPass ? Math.round(price * 0.75 * 100) / 100 : price;
+
+                if (hasPass) {
+                    document.getElementById("output").innerHTML = `Pass accepted. Your ticket price is $${finalPrice}.`;
+                } else if (firstId.toLowerCase() === "no") {
+                    document.getElementById("output").innerHTML = `No pass. Your ticket price is $${finalPrice}.`;
+                } else {
+                    document.getElementById("output").innerHTML = `Invalid pass ID. Your ticket price is $${finalPrice}.`;
+                }            }
+        }
+
+    </script>
+</body>
+</html>
